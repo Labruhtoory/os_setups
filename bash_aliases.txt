@@ -1,0 +1,4 @@
+alias up='python3 -m http.server 8000'
+alias room='subl notes.txt && subl readme.txt && subl /opt/Wargames/report-template-1.0.txt && subl /opt/Wargames/ctf_quickie/revshells.txt && subl /opt/Wargames/ctf_quickie/koth-specific/metwis-lin.txt && subl /opt/Wargames/ctf_quickie/koth-specific/metwis-win.txt && mkdir recon && mkdir enum && mkdir exploitation'
+alias dirsearch='python3 /opt/dirsearch/dirsearch.py'
+alias ghidria='bash /opt/ghidra_9.2.1_PUBLIC/ghidraRun'
