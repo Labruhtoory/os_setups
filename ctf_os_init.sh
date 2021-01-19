@@ -27,7 +27,7 @@ apt install -y default-jdk
 #export DOTNET_ROOT=$HOME/dotnet
 #export PATH=$PATH:$HOME/dotnet
 #rm -rf /opt/dotnet-sdk-3.1.404-linux-x64.tar.gz
-rm -rf /opt/rustscan_2.0.1_amd64.deb
+
 
 
 
