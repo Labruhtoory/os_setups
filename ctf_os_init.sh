@@ -18,7 +18,7 @@ cd rtl8812au/
 make && make install
 cd /opt/
 					##dependencies
-
+apt install clusterssh
 #java jdk
 apt install -y default-jdk
 #dotnet
