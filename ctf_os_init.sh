@@ -1,13 +1,14 @@
 #!/bin/bash
 
+#dpkg-reconfigure kali-grant-root
 #init
 mkdir server
 mkdir /ctf
 mkdir /thm
 mkdir /htb
 mkdir /ctf/koth
-dpkg-reconfigure kali-grant-root
-git clone https://github.com/Labruhtooryboi/Wargames.git
+
+git clone https://github.com/Labruhtooryboi/wargames_os.git
 
 #wireless drivers
 apt install -y build-essential libelf-dev linux-headers-`uname -r`
@@ -21,11 +22,11 @@ cd /opt/
 #java jdk
 apt install -y default-jdk
 #dotnet
-wget https://download.visualstudio.microsoft.com/download/pr/ec187f12-929e-4aa7-8abc-2f52e147af1d/56b0dbb5da1c191bff2c271fcd6e6394/dotnet-sdk-3.1.404-linux-x64.tar.gz
-mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.1.404-linux-x64.tar.gz -C $HOME/dotnet
-export DOTNET_ROOT=$HOME/dotnet
-export PATH=$PATH:$HOME/dotnet
-rm -rf /opt/dotnet-sdk-3.1.404-linux-x64.tar.gz
+#wget https://download.visualstudio.microsoft.com/download/pr/ec187f12-929e-4aa7-8abc-2f52e147af1d/56b0dbb5da1c191bff2c271fcd6e6394/dotnet-sdk-3.1.404-linux-x64.tar.gz
+#mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.1.404-linux-x64.tar.gz -C $HOME/dotnet
+#export DOTNET_ROOT=$HOME/dotnet
+#export PATH=$PATH:$HOME/dotnet
+#rm -rf /opt/dotnet-sdk-3.1.404-linux-x64.tar.gz
 rm -rf /opt/rustscan_2.0.1_amd64.deb
 
 
@@ -43,22 +44,27 @@ sudo apt-get install sublime-text
 
 
 #tor
-echo 'deb https://deb.torproject.org/torproject.org stretch main
-deb-src https://deb.torproject.org/torproject.org stretch main' > /etc/apt/sources.list.d/tor.list
-wget -O- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | sudo apt-key add -
-apt update
-apt-get install -y tor deb.torproject.org-keyring
+#echo 'deb https://deb.torproject.org/torproject.org stretch main
+#deb-src https://deb.torproject.org/torproject.org stretch main' > /etc/apt/sources.list.d/tor.list
+#wget -O- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | sudo apt-key add -
+#apt update
+#apt-get install -y tor deb.torproject.org-keyring
 
 #rphp
-wget https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php 
+git clone https://github.com/pentestmonkey/php-reverse-shell.git 
+mv php-reverse-shell/php-reverse-shell.php /opt/server/rphp.php
+rm -rf php-reverse-shell
 
 #pspy
 wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy32
 wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64
+mv pspy32 /opt/server/
+mv pspy64 /opt/server/
 
 
 #linenum
-wget https://github.com/rebootuser/LinEnum/blob/master/LinEnum.sh
+wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
+mv LinEnum.sh /opt/server/
 
 
 #kerbrute
@@ -72,7 +78,7 @@ mv kerbrute_linux_amd64 /usr/bin/kerbrute
 
 wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb
 dpkg -i rustscan_2.0.1_amd64.deb
-
+rm -rf /opt/rustscan_2.0.1_amd64.deb
 
 
 
@@ -108,33 +114,27 @@ mv ./phoneinfoga /usr/bin/phoneinfoga
 ##more setup
 
 
-mv LinEnum.sh /opt/server
 cp peas/linPEAS/linpeas.sh /opt/server/
-mv pspy64 /opt/server/
-mv pspy32 /opt/server
-mv php-reverse-shell.php rphp.php
-mv rphp.php /opt/server/
 
 #setting resolution of display
-touch screenres.sh
-echo 'xrandr --newmode "1920x1080"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync' > screenres.sh
-echo 'xrandr --addmode Virtual1 1920x1080' >> screenres.sh
-echo 'xrandr --output Virtual1 --mode 1920x1080' >> screenres.sh
-chmod +x screenres.sh
+#touch screenres.sh
+#echo 'xrandr --newmode "1920x1080"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync' > screenres.sh
+#echo 'xrandr --addmode Virtual1 1920x1080' >> screenres.sh
+#echo 'xrandr --output Virtual1 --mode 1920x1080' >> screenres.sh
+#chmod +x screenres.sh
 
 #bash_aliases
 cp backs/bash_aliases.txt /root/.bash_aliases
 source /root/.bash_aliases
 
 #bash.rc
-rm -rf /home/lab/.bashrc
-mv backs/u.bashrc /home/lab/.bashrc
-source /home/lab/.bashrc
+#rm -rf /home/lab/.bashrc
+#mv backs/u.bashrc /home/lab/.bashrc
+#source /home/lab/.bashrc
 
-rm -rf /root/.bashrc
-mv backs/r.bashrc /root/.bashrc
-source /root/.bashrc
+#rm -rf /root/.bashrc
+#mv backs/r.bashrc /root/.bashrc
+#source /root/.bashrc
 
-rm -rf /opt/init.sh
-rm -rf /opt/backs
+
 reboot now
