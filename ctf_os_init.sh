@@ -8,7 +8,7 @@ mkdir /thm
 mkdir /htb
 mkdir /ctf/koth
 
-git clone https://github.com/Labruhtooryboi/wargames_os.git
+
 
 #wireless drivers
 apt install -y build-essential libelf-dev linux-headers-`uname -r`
