@@ -82,3 +82,12 @@ systemctl stop sumthing.service
 
 sudo ufw allow 8080
 sudo ufw deny 8080
+
+
+			Move services to different ports
+
+nano /etc/services
+
+ps aux | grep <service>
+
+kill -HUP <PID of service>
