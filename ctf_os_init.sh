@@ -113,7 +113,7 @@ dpkg -i Hopper-v4-4.7.1-Linux.deb
 rm -rf Hopper-v4-4.7.1-Linux.deb
 
 #extra apt stuff
-sudo apt install -fy openvpn radare2 gdb gqrx-sdr clusterssh audacity strings
+sudo apt install -fy terminator openvpn radare2 gdb gqrx-sdr clusterssh audacity strings
 pip3 install urh
 
 #setting resolution of display
