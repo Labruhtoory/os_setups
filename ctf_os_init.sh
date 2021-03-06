@@ -6,6 +6,10 @@ mkdir /ctf
 mkdir /thm
 mkdir /htb
 
+#networking
+echo "nameserver 1.1.1.1" > /etv/resolve.conf
+echo "nameserver 1.0.0.1" >> /etv/resolve.conf
+
 #wireless drivers
 apt install -y build-essential libelf-dev linux-headers-`uname -r`
 apt install -y realtek-rtl88xxau-dkms
