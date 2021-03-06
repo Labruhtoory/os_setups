@@ -1,14 +1,10 @@
 #!/bin/bash
 
-dpkg-reconfigure kali-grant-root
-
 #init
 mkdir server
 mkdir /ctf
 mkdir /thm
 mkdir /htb
-
-
 
 #wireless drivers
 apt install -y build-essential libelf-dev linux-headers-`uname -r`
@@ -17,32 +13,29 @@ git clone https://github.com/aircrack-ng/rtl8812au.git
 cd rtl8812au/
 make && make install
 cd /opt/
-					##dependencies
+
+#programming language support
 apt install python3 python3-pip golang
 sudo python3 -m pip install --upgrade pip
 
 #java jdk
 apt install -y default-jdk
 
-
-
-
-					##standalones
-
-#sublime
+#subl
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 sudo apt-get install apt-transport-https
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
 sudo apt-get install sublime-text
 
-
 #tor
-#echo 'deb https://deb.torproject.org/torproject.org stretch main
-#deb-src https://deb.torproject.org/torproject.org stretch main' > /etc/apt/sources.list.d/tor.list
-#wget -O- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | sudo apt-key add -
-#apt update
-#apt-get install -y tor deb.torproject.org-keyring
+wget https://www.torproject.org/dist/torbrowser/10.0.13/tor-browser-linux64-10.0.13_en-US.tar.xz
+tar -xvf tor-browser-linux64-10.0.13_en-US.tar.xz
+rm -rf tor-browser-linux64-10.0.13_en-US.tar.xz
+cd tor-browser-linux64-10.0.13_en-US
+cd tor-browser_en-US
+bash start-tor-browser.desktop --register-app
+cd /opt
 
 #rphp
 git clone https://github.com/pentestmonkey/php-reverse-shell.git 
@@ -55,30 +48,18 @@ wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64
 mv pspy32 /opt/server/
 mv pspy64 /opt/server/
 
-
 #linenum
 wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
 mv LinEnum.sh /opt/server/linenum.sh
-
-
 
 #kerbrute
 wget https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64
 mv kerbrute_linux_amd64 /usr/bin/kerbrute
 
-
-
-
-					##installers
-
+#rustscan
 wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb
 dpkg -i rustscan_2.0.1_amd64.deb
 rm -rf /opt/rustscan_2.0.1_amd64.deb
-
-
-
-					##source code tools
-
 
 #linpeas
 git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
@@ -127,8 +108,6 @@ wget https://d2ap6ypl1xbe4k.cloudfront.net/Hopper-v4-4.7.1-Linux.deb
 dpkg -i Hopper-v4-4.7.1-Linux.deb
 rm -rf Hopper-v4-4.7.1-Linux.deb
 
-
-
 #extra apt stuff
 sudo apt install -fy openvpn radare2 gdb gqrx-sdr clusterssh audacity strings
 pip3 install urh
@@ -140,8 +119,7 @@ echo 'xrandr --addmode Virtual1 1920x1080' >> screenres.sh
 echo 'xrandr --output Virtual1 --mode 1920x1080' >> screenres.sh
 chmod +x screenres.sh
 
-
-			#aliases
+#aliases
 alias up='python3 -m http.server 8000' 
 alias room='bash /opt/wagames_os/notes/room-box_notes_start.sh'
 alias dirsearch='python3 /opt/dirsearch/dirsearch.py'
