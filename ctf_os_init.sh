@@ -99,6 +99,9 @@ git clone https://github.com/s0md3v/Photon.git
 wget https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.2/BloodHound-linux-x64.zip
 unzip BloodHound-linux-x64.zip
 rm -rf BloodHound-linux-x64.zip
+mkdir bloodhound
+mv BloodHound-linux-x64/* bloodhound/
+
 
 #ghidra
 wget https://ghidra-sre.org/ghidra_9.2.2_PUBLIC_20201229.zip
@@ -113,7 +116,7 @@ dpkg -i Hopper-v4-4.7.1-Linux.deb
 rm -rf Hopper-v4-4.7.1-Linux.deb
 
 #extra apt stuff
-sudo apt install -fy terminator openvpn radare2 gdb gqrx-sdr clusterssh audacity strings
+sudo apt install -fy terminator openvpn radare2 gdb gqrx-sdr clusterssh audacity strings neo4j
 pip3 install urh
 
 #setting resolution of display
@@ -129,7 +132,12 @@ alias room='bash /opt/wagames_os/notes/room-box_notes_start.sh'
 alias dirsearch='python3 /opt/dirsearch/dirsearch.py'
 alias ghidra='bash /opt/ghidra/ghidraRun'
 alias photon='python3 /opt/Photon/photon.py'
-alias bloodhound=''
+alias bloodhound='cd /opt/bloodbound && ./Bloodhound && cd'
 alias screenres='bash /opt/screenres.sh'
+
+# a bit more setup
+mkdir /usr/share/neo4j/logs
+mkdir /usr/share/neo4j/run
+#defaul creds - neo4j:neo4j - need to change
 
 reboot now
