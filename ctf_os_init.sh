@@ -101,6 +101,7 @@ unzip BloodHound-linux-x64.zip
 rm -rf BloodHound-linux-x64.zip
 mkdir bloodhound
 mv BloodHound-linux-x64/* bloodhound/
+pip install neo4j-driver
 
 
 #ghidra
@@ -108,7 +109,8 @@ wget https://ghidra-sre.org/ghidra_9.2.2_PUBLIC_20201229.zip
 unzip ghidra_9.2.2_PUBLIC_20201229.zip
 rm -rf ghidra_9.2.2_PUBLIC_20201229.zip
 mkdir ghidra
-mv ghidra_9.2.2_PUBLIC_20201229/ ghidra/
+mv ghidra_9.2.2_PUBLIC_20201229/* ghidra/
+rm -rf ghidra_9.2.2_PUBLIC_20201229/
 
 #hopper
 wget https://d2ap6ypl1xbe4k.cloudfront.net/Hopper-v4-4.7.1-Linux.deb
