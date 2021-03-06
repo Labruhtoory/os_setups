@@ -1,12 +1,12 @@
 #!/bin/bash
 
-#dpkg-reconfigure kali-grant-root
+dpkg-reconfigure kali-grant-root
+
 #init
 mkdir server
 mkdir /ctf
 mkdir /thm
 mkdir /htb
-mkdir /ctf/koth
 
 
 
@@ -18,17 +18,11 @@ cd rtl8812au/
 make && make install
 cd /opt/
 					##dependencies
-apt install clusterssh
+apt install python3 python3-pip golang
+sudo python3 -m pip install --upgrade pip
+
 #java jdk
 apt install -y default-jdk
-#dotnet
-#wget https://download.visualstudio.microsoft.com/download/pr/ec187f12-929e-4aa7-8abc-2f52e147af1d/56b0dbb5da1c191bff2c271fcd6e6394/dotnet-sdk-3.1.404-linux-x64.tar.gz
-#mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.1.404-linux-x64.tar.gz -C $HOME/dotnet
-#export DOTNET_ROOT=$HOME/dotnet
-#export PATH=$PATH:$HOME/dotnet
-#rm -rf /opt/dotnet-sdk-3.1.404-linux-x64.tar.gz
-
-
 
 
 
@@ -64,7 +58,8 @@ mv pspy64 /opt/server/
 
 #linenum
 wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
-mv LinEnum.sh /opt/server/
+mv LinEnum.sh /opt/server/linenum.sh
+
 
 
 #kerbrute
@@ -90,6 +85,8 @@ git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-su
 mkdir peas
 mv privilege-escalation-awesome-scripts-suite/* peas/
 rm -rf privilege-escalation-awesome-scripts-suite/
+cp peas/linPEAS/linpeas.sh /opt/server/
+cp peas/winPEAS/winPEASbat/winPEAS.bat /opt/server/
 
 #PSEmpire
 git clone https://github.com/EmpireProject/Empire.git
@@ -110,11 +107,31 @@ git clone https://github.com/maurosoria/dirsearch.git
 curl -sSL https://raw.githubusercontent.com/sundowndev/PhoneInfoga/master/support/scripts/install | bash
 mv ./phoneinfoga /usr/bin/phoneinfoga
 
+#photon
+git clone https://github.com/s0md3v/Photon.git
 
-##more setup
+#bloodhound
+wget https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.2/BloodHound-linux-x64.zip
+unzip BloodHound-linux-x64.zip
+rm -rf BloodHound-linux-x64.zip
+
+#ghidra
+wget https://ghidra-sre.org/ghidra_9.2.2_PUBLIC_20201229.zip
+unzip ghidra_9.2.2_PUBLIC_20201229.zip
+rm -rf ghidra_9.2.2_PUBLIC_20201229.zip
+mkdir ghidra
+mv ghidra_9.2.2_PUBLIC_20201229/ ghidra/
+
+#hopper
+wget https://d2ap6ypl1xbe4k.cloudfront.net/Hopper-v4-4.7.1-Linux.deb
+dpkg -i Hopper-v4-4.7.1-Linux.deb
+rm -rf Hopper-v4-4.7.1-Linux.deb
 
 
-cp peas/linPEAS/linpeas.sh /opt/server/
+
+#extra apt stuff
+sudo apt install -fy openvpn radare2 gdb gqrx-sdr clusterssh audacity strings
+pip3 install urh
 
 #setting resolution of display
 touch screenres.sh
@@ -122,19 +139,5 @@ echo 'xrandr --newmode "1920x1080"  173.00  1920 2048 2248 2576  1080 1083 1088 
 echo 'xrandr --addmode Virtual1 1920x1080' >> screenres.sh
 echo 'xrandr --output Virtual1 --mode 1920x1080' >> screenres.sh
 chmod +x screenres.sh
-
-#bash_aliases
-cp backs/bash_aliases.txt /root/.bash_aliases
-source /root/.bash_aliases
-
-#bash.rc
-#rm -rf /home/lab/.bashrc
-#mv backs/u.bashrc /home/lab/.bashrc
-#source /home/lab/.bashrc
-
-#rm -rf /root/.bashrc
-#mv backs/r.bashrc /root/.bashrc
-#source /root/.bashrc
-
 
 reboot now
