@@ -140,4 +140,13 @@ echo 'xrandr --addmode Virtual1 1920x1080' >> screenres.sh
 echo 'xrandr --output Virtual1 --mode 1920x1080' >> screenres.sh
 chmod +x screenres.sh
 
+
+			#aliases
+alias up='python3 -m http.server 8000' 
+alias room='bash /opt/wagames_os/notes/room-box_notes_start.sh'
+alias dirsearch='python3 /opt/dirsearch/dirsearch.py'
+alias ghidra='bash /opt/ghidra/ghidraRun'
+alias photon='python3 /opt/Photon/photon.py'
+alias bloodhound=''
+
 reboot now
