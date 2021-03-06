@@ -148,5 +148,6 @@ alias dirsearch='python3 /opt/dirsearch/dirsearch.py'
 alias ghidra='bash /opt/ghidra/ghidraRun'
 alias photon='python3 /opt/Photon/photon.py'
 alias bloodhound=''
+alias screenres='bash /opt/screenres.sh'
 
 reboot now
