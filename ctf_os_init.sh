@@ -3,8 +3,9 @@
 #repo
 echo "" > /etc/apt/sources.list
 apt-key adv --keyserver pool.sks-keyservers.net --recv-keys ED444FF07D8D0BF6
-echo '# Kali linux repositories | Added by Katoolin\ndeb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
-apt-get update -m
+echo '# Kali linux repositories | Added by Katoolin' >> /etc/apt/sources.list
+echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
+apt-get update
 
 #upfront apt stuff
 sudo apt install -fy python3 python3-pip golang terminator openvpn gnome-tweaks exploit-db set default-jdk radare2 gdb gqrx-sdr clusterssh audacity strings neo4j tor torbrowser-launcher nmap masscan wireshark armitage nikto osrframework recon-ng zaproxy sparta enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 hexorbase powerfuzzer aircrack-ng rtlsdr-scanner gqrx-sdr wifite airmon-ng pixiewps burpsuite dirbuster gobuster wordlists sqlmap sqlninja uniscan websploit fuff siparmyknife powersploit backdoor-factory beef-xss rtpflood crunch hash-identifier john jhonny rainbowcrack hashcat arduino gunzip
