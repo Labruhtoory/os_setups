@@ -8,7 +8,7 @@ echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/
 apt-get update
 
 #upfront apt stuff
-sudo apt install -fy wireshark python3 python3-pip golang terminator openvpn gnome-tweaks exiftool strings default-jdk radare2 gdb gqrx-sdr clusterssh audacity neo4j tor torbrowser-launcher nmap masscan armitage set nikto osrframework recon-ng zaproxy enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 aircrack-ng rtlsdr-scanner gqrx-sdr wifite pixiewps burpsuite dirbuster gobuster wordlists sqlmap sqlninja uniscan websploit ffuf siparmyknife powersploit backdoor-factory beef-xss rtpflood crunch hash-identifier john johnny rainbowcrack hashcat arduino
+sudo apt install -fy wireshark kali-menu classicmenu-indicator python3 python3-pip golang terminator openvpn gnome-tweaks exiftool nasm strings binwalk default-jdk radare2 gdb gqrx-sdr clusterssh audacity neo4j tor torbrowser-launcher nmap masscan exploitdb armitage set nikto osrframework recon-ng netdiscover legion voiphopper zaproxy enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 reaver aircrack-ng rtlsdr-scanner gqrx-sdr wifite pixiewps burpsuite dirb dirbuster gobuster wpscan wordlists sqlmap sqlninja uniscan websploit ffuf siparmyknife powersploit backdoor-factory veil-evasion bettercap beef-xss rtpflood crunch hash-identifier john johnny rainbowcrack hashcat arduino
 
 #init
 mkdir server
@@ -115,6 +115,9 @@ rm -rf ghidra_9.2.2_PUBLIC_20201229/
 wget https://d2ap6ypl1xbe4k.cloudfront.net/Hopper-v4-4.7.1-Linux.deb
 dpkg -i Hopper-v4-4.7.1-Linux.deb
 rm -rf Hopper-v4-4.7.1-Linux.deb
+
+#unicorn
+git clone https://github.com/trustedsec/unicorn.git
 
 #urh
 git clone https://github.com/jopohl/urh.git
