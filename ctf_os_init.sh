@@ -1,4 +1,12 @@
 #!/bin/bash
+#repo
+echo "" > /etc/apt/sources.list
+apt-key adv --keyserver pool.sks-keyservers.net --recv-keys ED444FF07D8D0BF6
+echo '# Kali linux repositories | Added by Katoolin\ndeb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
+apt-get update -m
+
+#upfront apt stuff
+sudo apt install -fy python3 python3-pip golang terminator openvpn gnome-tweaks exploit-db set radare2 gdb gqrx-sdr clusterssh audacity strings neo4j tor torbrowser-launcher nmap masscan wireshark armitage nikto osrframework recon-ng zaproxy sparta enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 hexorbase powerfuzzer aircrack-ng rtlsdr-scanner gqrx-sdr wifite airmon-ng pixiewps burpsuite dirbuster gobuster wordlists sqlmap sqlninja uniscan websploit fuff siparmyknife powersploit backdoor-factory beef-xss rtpflood crunch hash-identifier john jhonny rainbowcrack hashcat arduino 
 
 #init
 mkdir server
@@ -7,8 +15,8 @@ mkdir /thm
 mkdir /htb
 
 #networking
-echo "nameserver 1.1.1.1" > /etv/resolve.conf
-echo "nameserver 1.0.0.1" >> /etv/resolve.conf
+echo "nameserver 1.1.1.1" > /etv/resolv.conf
+echo "nameserver 1.0.0.1" >> /etv/resolv.conf
 
 #wireless drivers
 apt install -y build-essential libelf-dev linux-headers-`uname -r`
@@ -19,8 +27,9 @@ make && make install
 cd /opt/
 
 #programming language support
-apt install python3 python3-pip golang
 sudo python3 -m pip install --upgrade pip
+pip install neo4j-driver
+pip3 install urh
 
 #java jdk
 apt install -y default-jdk
@@ -31,15 +40,6 @@ sudo apt-get install apt-transport-https
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
 sudo apt-get install sublime-text
-
-#tor
-wget https://www.torproject.org/dist/torbrowser/10.0.13/tor-browser-linux64-10.0.13_en-US.tar.xz
-tar -xvf tor-browser-linux64-10.0.13_en-US.tar.xz
-rm -rf tor-browser-linux64-10.0.13_en-US.tar.xz
-cd tor-browser-linux64-10.0.13_en-US
-cd tor-browser_en-US
-bash start-tor-browser.desktop --register-app
-cd /opt
 
 #rphp
 git clone https://github.com/pentestmonkey/php-reverse-shell.git 
@@ -101,7 +101,6 @@ unzip BloodHound-linux-x64.zip
 rm -rf BloodHound-linux-x64.zip
 mkdir bloodhound
 mv BloodHound-linux-x64/* bloodhound/
-pip install neo4j-driver
 
 
 #ghidra
@@ -116,10 +115,6 @@ rm -rf ghidra_9.2.2_PUBLIC_20201229/
 wget https://d2ap6ypl1xbe4k.cloudfront.net/Hopper-v4-4.7.1-Linux.deb
 dpkg -i Hopper-v4-4.7.1-Linux.deb
 rm -rf Hopper-v4-4.7.1-Linux.deb
-
-#extra apt stuff
-sudo apt install -fy terminator openvpn radare2 gdb gqrx-sdr clusterssh audacity strings neo4j
-pip3 install urh
 
 #setting resolution of display
 touch screenres.sh
