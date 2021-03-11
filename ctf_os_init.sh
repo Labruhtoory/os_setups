@@ -8,13 +8,7 @@ echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/
 apt-get update
 
 #upfront apt stuff
-sudo apt install -fy python3 python3-pip golang terminator openvpn gnome-tweaks set 
-sudo apt install default-jdk radare2 gdb gqrx-sdr clusterssh audacity neo4j tor torbrowser-launcher 
-sudo apt install nmap masscan wireshark armitage nikto osrframework recon-ng zaproxy enum4linux 
-sudo apt install dmitry dnsrecon dnstracer theharvester thc-ipv6 hexorbase aircrack-ng rtlsdr-scanner gqrx-sdr
-sudo apt install wifite pixiewps burpsuite dirbuster gobuster wordlists sqlmap sqlninja uniscan websploit ffuf 
-sudo apt install siparmyknife powersploit backdoor-factory beef-xss rtpflood 
-sudo apt install crunch hash-identifier john johnny rainbowcrack hashcat arduino
+sudo apt install -fy python3 python3-pip golang terminator openvpn gnome-tweaks default-jdk radare2 gdb gqrx-sdr clusterssh audacity neo4j tor torbrowser-launcher nmap masscan armitage set nikto osrframework recon-ng zaproxy enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 aircrack-ng rtlsdr-scanner gqrx-sdr wifite pixiewps burpsuite dirbuster gobuster wordlists sqlmap sqlninja uniscan websploit ffuf siparmyknife powersploit backdoor-factory beef-xss rtpflood crunch hash-identifier john johnny rainbowcrack hashcat arduino
 
 #init
 mkdir server
