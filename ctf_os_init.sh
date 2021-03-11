@@ -135,4 +135,5 @@ echo "alias photon='python3 /opt/Photon/photon.py'" >> ~/.bashrc
 echo "alias bloodhound='cd /opt/bloodbound && ./Bloodhound && cd'" >> ~/.bashrc 
 echo "alias screenres='bash /opt/screenres.sh'" >> ~/.bashrc
 
+chmod -R 777 /opt/
 reboot now
