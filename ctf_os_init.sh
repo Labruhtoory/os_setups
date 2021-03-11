@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #repo
 echo "" > /etc/apt/sources.list
 apt-key adv --keyserver pool.sks-keyservers.net --recv-keys ED444FF07D8D0BF6
@@ -6,7 +7,7 @@ echo '# Kali linux repositories | Added by Katoolin\ndeb http://http.kali.org/ka
 apt-get update -m
 
 #upfront apt stuff
-sudo apt install -fy python3 python3-pip golang terminator openvpn gnome-tweaks exploit-db set radare2 gdb gqrx-sdr clusterssh audacity strings neo4j tor torbrowser-launcher nmap masscan wireshark armitage nikto osrframework recon-ng zaproxy sparta enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 hexorbase powerfuzzer aircrack-ng rtlsdr-scanner gqrx-sdr wifite airmon-ng pixiewps burpsuite dirbuster gobuster wordlists sqlmap sqlninja uniscan websploit fuff siparmyknife powersploit backdoor-factory beef-xss rtpflood crunch hash-identifier john jhonny rainbowcrack hashcat arduino 
+sudo apt install -fy python3 python3-pip golang terminator openvpn gnome-tweaks exploit-db set default-jdk radare2 gdb gqrx-sdr clusterssh audacity strings neo4j tor torbrowser-launcher nmap masscan wireshark armitage nikto osrframework recon-ng zaproxy sparta enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 hexorbase powerfuzzer aircrack-ng rtlsdr-scanner gqrx-sdr wifite airmon-ng pixiewps burpsuite dirbuster gobuster wordlists sqlmap sqlninja uniscan websploit fuff siparmyknife powersploit backdoor-factory beef-xss rtpflood crunch hash-identifier john jhonny rainbowcrack hashcat arduino gunzip
 
 #init
 mkdir server
@@ -28,11 +29,7 @@ cd /opt/
 
 #programming language support
 sudo python3 -m pip install --upgrade pip
-pip install neo4j-driver
-pip3 install urh
-
-#java jdk
-apt install -y default-jdk
+pip3 install neo4j-driver
 
 #subl
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -101,7 +98,9 @@ unzip BloodHound-linux-x64.zip
 rm -rf BloodHound-linux-x64.zip
 mkdir bloodhound
 mv BloodHound-linux-x64/* bloodhound/
-
+mkdir /usr/share/neo4j/logs
+mkdir /usr/share/neo4j/run
+#defaul creds - neo4j:neo4j - need to change
 
 #ghidra
 wget https://ghidra-sre.org/ghidra_9.2.2_PUBLIC_20201229.zip
@@ -116,6 +115,9 @@ wget https://d2ap6ypl1xbe4k.cloudfront.net/Hopper-v4-4.7.1-Linux.deb
 dpkg -i Hopper-v4-4.7.1-Linux.deb
 rm -rf Hopper-v4-4.7.1-Linux.deb
 
+#urh
+git clone https://github.com/jopohl/urh.git
+
 #setting resolution of display
 touch screenres.sh
 echo 'xrandr --newmode "1920x1080"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync' > screenres.sh
@@ -124,17 +126,12 @@ echo 'xrandr --output Virtual1 --mode 1920x1080' >> screenres.sh
 chmod +x screenres.sh
 
 #aliases
-alias up='python3 -m http.server 8000' 
-alias room='bash /opt/wagames_os/notes/room-box_notes_start.sh'
-alias dirsearch='python3 /opt/dirsearch/dirsearch.py'
-alias ghidra='bash /opt/ghidra/ghidraRun'
-alias photon='python3 /opt/Photon/photon.py'
-alias bloodhound='cd /opt/bloodbound && ./Bloodhound && cd'
-alias screenres='bash /opt/screenres.sh'
-
-# a bit more setup
-mkdir /usr/share/neo4j/logs
-mkdir /usr/share/neo4j/run
-#defaul creds - neo4j:neo4j - need to change
+echo "alias up='python3 -m http.server 8000'" >> ~/.bashrc
+echo "alias room='bash /opt/wagames_os/notes/room-box_notes_start.sh'" >> ~/.bashrc
+echo "alias dirsearch='python3 /opt/dirsearch/dirsearch.py'" >> ~/.bashrc
+echo "alias ghidra='bash /opt/ghidra/ghidraRun'" >> ~/.bashrc 
+echo "alias photon='python3 /opt/Photon/photon.py'" >> ~/.bashrc 
+echo "alias bloodhound='cd /opt/bloodbound && ./Bloodhound && cd'" >> ~/.bashrc 
+echo "alias screenres='bash /opt/screenres.sh'" >> ~/.bashrc
 
 reboot now
