@@ -7,7 +7,23 @@ echo '# Kali linux repositories | Added by Katoolin' >> /etc/apt/sources.list
 echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
 apt-get update
 
-#upfront apt stuff
+read -p 'Full? y/n> ' full
+if ((full == "y"))
+then 
+  echo "OK, installing all packages"
+else
+  read -p 'Recon? y/n> ' recon
+  read -p 'Enum? y/n> ' enum
+  read -p 'RevFor? y/n> ' revfor
+  read -p 'Xploit? y/n> ' xploit
+  read -p 'Post? y/n> ' post
+  read -p 'Net? y/n> ' net
+  read -p 'Anon? y/n> ' anon
+  read -p 'Custom? y/n> ' cus
+  read -p 'Github y/n' gitstuff
+  
+
+
 sudo apt install -fy wireshark kali-menu python3 python3-pip sqlitebrowser golang terminator openvpn gnome-tweaks exiftool nasm binwalk default-jdk radare2 gdb gqrx-sdr clusterssh audacity neo4j tor torbrowser-launcher nmap masscan exploitdb armitage set nikto osrframework recon-ng netdiscover legion voiphopper zaproxy enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 reaver aircrack-ng rtlsdr-scanner gqrx-sdr wifite pixiewps burpsuite dirb dirbuster gobuster wpscan wordlists sqlmap sqlninja uniscan websploit ffuf siparmyknife powersploit backdoor-factory veil-evasion bettercap beef-xss rtpflood crunch hash-identifier john johnny rainbowcrack hashcat arduino
 
 #init
