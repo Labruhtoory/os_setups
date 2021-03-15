@@ -85,7 +85,7 @@ then
   then
   echo 'No revfor...'
   else
-  sudo apt install -fy exiftool binwalk radare2 gdb audacity arduino
+  sudo apt install -fy exiftool binwalk radare2 gdb arduino
 
   #rphp
   git clone https://github.com/pentestmonkey/php-reverse-shell.git 
@@ -127,7 +127,7 @@ then
   fi
 else
   echo "OK, installing all packages"
-  sudo apt install -fy python3 python3-pip golang openvpn exiftool nasm binwalk default-jdk radare2 gdb gqrx-sdr clusterssh audacity neo4j tor nmap masscan exploitdb set nikto osrframework recon-ng netdiscover zaproxy enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 reaver aircrack-ng rtlsdr-scanner gqrx-sdr wifite pixiewps dirb dirbuster gobuster wpscan wordlists sqlmap sqlninja uniscan websploit ffuf siparmyknife powersploit backdoor-factory bettercap beef-xss rtpflood crunch hash-identifier john johnny hashcat arduino
+  sudo apt install -fy python3 python3-pip golang openvpn exiftool nasm binwalk default-jdk radare2 gdb gqrx-sdr clusterssh neo4j tor nmap masscan exploitdb set nikto osrframework recon-ng netdiscover zaproxy enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 reaver aircrack-ng rtlsdr-scanner gqrx-sdr wifite pixiewps dirb dirbuster gobuster wpscan wordlists sqlmap sqlninja uniscan websploit ffuf siparmyknife powersploit backdoor-factory bettercap beef-xss rtpflood crunch hash-identifier john johnny hashcat arduino
   
   #unicorn
   git clone https://github.com/trustedsec/unicorn.git
