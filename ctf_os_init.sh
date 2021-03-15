@@ -33,7 +33,7 @@ chmod +x screenres.sh
 
 echo 'keep in mind the default answer is yes...'
 read -p 'Full? y/n> ' full
-if [ $(full) == "n" ] 
+if [ $(full) == 'n' ] 
 then
   echo "OK, Please choose you packages (y/n)..."
   read -p 'Net?> ' net
@@ -43,13 +43,13 @@ then
   read -p 'Xploit?> ' xploit
   read -p 'Post?> ' post
   read -p 'Anon?> ' anon
-  if [ $(net) == "n" ]
+  if [ $(net) == 'n' ]
   then
   echo 'No net...'
   else
   sudo apt install -fy nmap masscan wireshark aircrack-ng wifite pixiewps bettercap clusterssh netdiscover reaver rtpflood
   fi
-  if [ $(recon) == "n" ]
+  if [ $(recon) == 'n' ]
   then
   echo 'No recon...'
   else
@@ -73,7 +73,7 @@ then
   #photon
   git clone https://github.com/s0md3v/Photon.git
   fi
-  if [ $(enum) == "n" ]
+  if [ $(enum) == 'n' ]
   then
   echo 'No enum...'
   else
@@ -98,7 +98,7 @@ then
   #dirsearch
   git clone https://github.com/maurosoria/dirsearch.git
   fi
-  if [ $(revfor) == "n" ]
+  if [ $(revfor) == 'n' ]
   then
   echo 'No revfor...'
   sudo apt install -fy exiftool binwalk radare2 gdb audacity arduino
@@ -120,7 +120,7 @@ then
   git clone https://github.com/icsharpcode/ILSpy.git
   else
   fi
-  if [ $(xploit) == "n" ]
+  if [ $(xploit) == 'n' ]
   then
   echo 'No xploit...'
   else
@@ -140,7 +140,7 @@ then
   #PSEmpire
   git clone https://github.com/EmpireProject/Empire.git
   fi
-  if [ $(post) == "n" ]
+  if [ $(post) == 'n' ]
   then
   echo 'No post...'
   else
@@ -156,13 +156,13 @@ then
   mkdir /usr/share/neo4j/run
   #defaul creds - neo4j:neo4j - need to change
   fi
-  if [ $(anon) == "n" ]
+  if [ $(anon) == 'n' ]
   then
   echo 'No anon...'
   else
   sudo apt install -fy openvpn tor torbrowser-launcher
   fi
-  if [ $(cus) == "n" ]
+  if [ $(cus) == 'n' ]
   then
   echo 'No custom...'
   else
