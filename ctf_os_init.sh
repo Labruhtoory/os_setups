@@ -101,6 +101,7 @@ then
   if [ $(revfor) == 'n' ]
   then
   echo 'No revfor...'
+  else
   sudo apt install -fy exiftool binwalk radare2 gdb audacity arduino
 
   #hopper
@@ -118,7 +119,6 @@ then
 
   #ILSpy decompiler
   git clone https://github.com/icsharpcode/ILSpy.git
-  else
   fi
   if [ $(xploit) == 'n' ]
   then
@@ -168,18 +168,18 @@ then
   else
   sudo apt install -fy gnome-tweaks
 
-    #subl
-    wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-    sudo apt-get install apt-transport-https
-    echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-    sudo apt-get update
-    sudo apt-get install sublime-text								
+  #subl
+  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+  sudo apt-get install apt-transport-https
+  echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+  sudo apt-get update
+  sudo apt-get install sublime-text								
 
-    #poor mans pentest
-    git clone https://github.com/JohnHammond/poor-mans-pentest.git
-    mkdir pmp
-    mv poor-mans-pentest/* pmp/
-    rm -rf poor-mans-pentest
+  #poor mans pentest
+  git clone https://github.com/JohnHammond/poor-mans-pentest.git
+  mkdir pmp
+  mv poor-mans-pentest/* pmp/
+  rm -rf poor-mans-pentest
   fi
 else
   echo "OK, installing all packages"
