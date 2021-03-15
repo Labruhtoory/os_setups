@@ -7,7 +7,7 @@ apt-key adv --keyserver pool.sks-keyservers.net --recv-keys ED444FF07D8D0BF6
 echo '# Kali linux repositories | Added by Katoolin' >> /etc/apt/sources.list
 echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
 apt-get update
-sudo apt install -fy kali-menu python3 python3-pip sqlitebrowser golang nasm default-jdk
+sudo apt install -fy python3 python3-pip golang nasm default-jdk
 
 #programming language support
 sudo python3 -m pip install --upgrade pip
@@ -132,7 +132,7 @@ then
   fi
 else
   echo "OK, installing all packages"
-  sudo apt install -fy python3 python3-pip golang openvpn gnome-tweaks exiftool nasm binwalk default-jdk radare2 gdb gqrx-sdr clusterssh audacity neo4j tor nmap masscan exploitdb set nikto osrframework recon-ng netdiscover zaproxy enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 reaver aircrack-ng rtlsdr-scanner gqrx-sdr wifite pixiewps dirb dirbuster gobuster wpscan wordlists sqlmap sqlninja uniscan websploit ffuf siparmyknife powersploit backdoor-factory veil-evasion bettercap beef-xss rtpflood crunch hash-identifier john johnny hashcat arduino
+  sudo apt install -fy python3 python3-pip golang openvpn exiftool nasm binwalk default-jdk radare2 gdb gqrx-sdr clusterssh audacity neo4j tor nmap masscan exploitdb set nikto osrframework recon-ng netdiscover zaproxy enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 reaver aircrack-ng rtlsdr-scanner gqrx-sdr wifite pixiewps dirb dirbuster gobuster wpscan wordlists sqlmap sqlninja uniscan websploit ffuf siparmyknife powersploit backdoor-factory veil-evasion bettercap beef-xss rtpflood crunch hash-identifier john johnny hashcat arduino
   
   #unicorn
   git clone https://github.com/trustedsec/unicorn.git
