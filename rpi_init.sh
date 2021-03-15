@@ -46,11 +46,6 @@ then
   echo 'No recon...'
   else
   sudo apt install -fy recon-ng aircrack-ng rtlsdr-scanner gqrx-sdr osrframework dnsrecon thc-ipv6 uniscan ffuf
-								
-  #rustscan
-  wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb
-  dpkg -i rustscan_2.0.1_amd64.deb
-  rm -rf /opt/rustscan_2.0.1_amd64.deb
 
   #unicorn
   git clone https://github.com/trustedsec/unicorn.git
