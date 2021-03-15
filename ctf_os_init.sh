@@ -33,7 +33,8 @@ chmod +x screenres.sh
 
 echo 'keep in mind the default answer is yes...'
 read -p 'Full? y/n> ' full
-if [$(full) == "n"]; then
+if [$(full) == "n"] 
+then
   echo "OK, Please choose you packages (y/n)..."
   read -p 'Net?> ' net
   read -p 'Recon?> ' recon
@@ -42,12 +43,14 @@ if [$(full) == "n"]; then
   read -p 'Xploit?> ' xploit
   read -p 'Post?> ' post
   read -p 'Anon?> ' anon
-  if [$(net) == "n"]; then
+  if [$(net) == "n"]
+  then
   echo 'No net...'
   else
   sudo apt install -fy nmap masscan wireshark aircrack-ng wifite pixiewps bettercap clusterssh netdiscover reaver rtpflood
   fi
-  if [$(recon) == "n"]; then
+  if [$(recon) == "n"]
+  then
   echo 'No recon...'
   else
   sudo apt install -fy recon-ng aircrack-ng rtlsdr-scanner gqrx-sdr osrframework legion dnsrecon thc-ipv6 uniscan ffuf
@@ -70,7 +73,8 @@ if [$(full) == "n"]; then
   #photon
   git clone https://github.com/s0md3v/Photon.git
   fi
-  if [$(enum) == "n"]; then
+  if [$(enum) == "n"]
+  then
   echo 'No enum...'
   else
   sudo apt install -fy nikto voiphopper zaproxy burpsuite enum4linux dmitry dnstracer dirb dirbuster gobuster wpscan siparmyknife theharvester
@@ -94,7 +98,8 @@ if [$(full) == "n"]; then
   #dirsearch
   git clone https://github.com/maurosoria/dirsearch.git
   fi
-  if [$(revfor) == "n"]; then
+  if [$(revfor) == "n"]
+  then
   echo 'No revfor...'
   sudo apt install -fy exiftool binwalk radare2 gdb audacity arduino
 
@@ -115,7 +120,8 @@ if [$(full) == "n"]; then
   git clone https://github.com/icsharpcode/ILSpy.git
   else
   fi
-  if [$(xploit) == "n"]; then
+  if [$(xploit) == "n"]
+  then
   echo 'No xploit...'
   else
   sudo apt install -fy exploitdb set sqlmap sqlninja websploit powersploit veil-evasion beef-xss
@@ -134,7 +140,8 @@ if [$(full) == "n"]; then
   #PSEmpire
   git clone https://github.com/EmpireProject/Empire.git
   fi
-  if [$(post) == "n"]; then
+  if [$(post) == "n"]
+  then
   echo 'No post...'
   else
   sudo apt install -fy neo4j wordlists backdoor-factory crunch hash-identifier john johnny rainbowcrack hashcat
@@ -149,12 +156,14 @@ if [$(full) == "n"]; then
   mkdir /usr/share/neo4j/run
   #defaul creds - neo4j:neo4j - need to change
   fi
-  if [$(anon) == "n"]; then
+  if [$(anon) == "n"]
+  then
   echo 'No anon...'
   else
   sudo apt install -fy openvpn tor torbrowser-launcher
   fi
-  if [$(cus) == "n"]; then
+  if [$(cus) == "n"]
+  then
   echo 'No custom...'
   else
   sudo apt install -fy gnome-tweaks
