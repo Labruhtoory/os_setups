@@ -8,7 +8,7 @@ echo '# Kali linux repositories | Added by Katoolin' >> /etc/apt/sources.list
 echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
 apt-get update
 sudo apt install -fy kali-menu python3 python3-pip sqlitebrowser golang nasm default-jdk terminator
-
+sudo apt --fix-broken install
 #programming language support
 sudo python3 -m pip install --upgrade pip
 pip3 install neo4j-driver
@@ -48,13 +48,15 @@ then
   echo 'No net...'
   else
   sudo apt install -fy nmap masscan wireshark aircrack-ng wifite pixiewps bettercap clusterssh netdiscover reaver rtpflood
+  sudo apt --fix-broken install
   fi
   if [ $(recon) == 'n' ]
   then
   echo 'No recon...'
   else
   sudo apt install -fy recon-ng aircrack-ng rtlsdr-scanner gqrx-sdr osrframework legion dnsrecon thc-ipv6 uniscan ffuf
-								
+  sudo apt --fix-broken install								
+  
   #rustscan
   wget https://github.com/RustScan/RustScan/releases/download/2.0.1/rustscan_2.0.1_amd64.deb
   dpkg -i rustscan_2.0.1_amd64.deb
@@ -78,7 +80,8 @@ then
   echo 'No enum...'
   else
   sudo apt install -fy nikto voiphopper zaproxy burpsuite enum4linux dmitry dnstracer dirb dirbuster gobuster wpscan siparmyknife theharvester
-
+  sudo apt --fix-broken install
+  
   #linenum
   wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh
   mv LinEnum.sh /opt/server/linenum.sh
@@ -103,7 +106,8 @@ then
   echo 'No revfor...'
   else
   sudo apt install -fy exiftool binwalk radare2 gdb audacity arduino
-
+  sudo apt --fix-broken install
+  
   #hopper
   wget https://d2ap6ypl1xbe4k.cloudfront.net/Hopper-v4-4.7.1-Linux.deb
   dpkg -i Hopper-v4-4.7.1-Linux.deb
@@ -145,7 +149,8 @@ then
   echo 'No post...'
   else
   sudo apt install -fy neo4j wordlists backdoor-factory crunch hash-identifier john johnny rainbowcrack hashcat
-		
+  sudo apt --fix-broken install
+  
   #bloodhound
   wget https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.2/BloodHound-linux-x64.zip
   unzip BloodHound-linux-x64.zip
@@ -162,13 +167,15 @@ then
   echo 'No anon...'
   else
   sudo apt install -fy openvpn tor torbrowser-launcher
+  sudo apt --fix-broken install
   fi
   if [ $(cus) == 'n' ]
   then
   echo 'No custom...'
   else
   sudo apt install -fy gnome-tweaks
-
+  sudo apt --fix-broken install
+  
   #subl
   wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
   sudo apt-get install apt-transport-https
@@ -185,6 +192,7 @@ then
 else
   echo "OK, installing all packages"
   sudo apt install -fy wireshark kali-menu python3 python3-pip sqlitebrowser golang terminator openvpn gnome-tweaks exiftool nasm binwalk default-jdk radare2 gdb gqrx-sdr clusterssh audacity neo4j tor torbrowser-launcher nmap masscan exploitdb armitage set nikto osrframework recon-ng netdiscover legion voiphopper zaproxy enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 reaver aircrack-ng rtlsdr-scanner gqrx-sdr wifite pixiewps burpsuite dirb dirbuster gobuster wpscan wordlists sqlmap sqlninja uniscan websploit ffuf siparmyknife powersploit backdoor-factory veil-evasion bettercap beef-xss rtpflood crunch hash-identifier john johnny rainbowcrack hashcat arduino
+  sudo apt --fix-broken install
   
   #unicorn
   git clone https://github.com/trustedsec/unicorn.git
