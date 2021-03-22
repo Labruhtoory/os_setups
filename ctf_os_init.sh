@@ -112,6 +112,13 @@ then
   sudo apt install -fy exiftool binwalk radare2 gdb audacity arduino
   sudo apt --fix-broken install
   
+  #vscode
+  sudo apt update
+  sudo apt install software-properties-common apt-transport-https wget
+  wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+  sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+  sudo apt install code
+
   #hopper
   wget https://d2ap6ypl1xbe4k.cloudfront.net/Hopper-v4-4.7.1-Linux.deb
   dpkg -i Hopper-v4-4.7.1-Linux.deb
@@ -247,7 +254,15 @@ else
   sudo apt-get install apt-transport-https
   echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
   sudo apt-get update
-  sudo apt-get install sublime-text
+  sudo apt-get install sublime-
+  
+  
+  #vscode
+  sudo apt update
+  sudo apt install software-properties-common apt-transport-https wget
+  wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+  sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+  sudo apt install code
     
   #rphp
   git clone https://github.com/pentestmonkey/php-reverse-shell.git 
