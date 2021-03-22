@@ -285,14 +285,13 @@ make && make install
 cd /opt/
     
 #aliases
-touch ~/.bash_aliases
-echo "alias up='python3 -m http.server 8000'" >> ~/.bash_aliases
-echo "alias room='bash /opt/wagames_os/notes/room-box_notes_start.sh'" >> ~/.bash_aliases
-echo "alias dirsearch='python3 /opt/dirsearch/dirsearch.py'" >> ~/.bash_aliases
-echo "alias ghidra='bash /opt/ghidra/ghidraRun'" >> ~/.bash_aliases
-echo "alias photon='python3 /opt/Photon/photon.py'" >> ~/.bash_aliases
-echo "alias bloodhound='cd /opt/bloodbound && ./Bloodhound && cd'" >> ~/.bash_aliases
-echo "alias screenres='bash /opt/screenres.sh'" >> ~/.bash_aliases
+echo "alias up='python3 -m http.server 8000'" >> ~/.bashrc
+echo "alias room='bash /opt/wagames_os/notes/room-box_notes_start.sh'" >> ~/.bashrc
+echo "alias dirsearch='python3 /opt/dirsearch/dirsearch.py'" >> ~/.bashrc
+echo "alias ghidra='bash /opt/ghidra/ghidraRun'" >> ~/.bashrc
+echo "alias photon='python3 /opt/Photon/photon.py'" >> ~/.bashrc
+echo "alias bloodhound='cd bash /opt/bloodhound/Bloodhound'" >> ~/.bashrc
+echo "alias screenres='bash /opt/screenres.sh'" >> ~/.bashrc
 
 chmod -R 777 /opt/
 reboot now
