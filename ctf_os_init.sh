@@ -114,8 +114,8 @@ then
   unzip ghidra_9.2.2_PUBLIC_20201229.zip
   rm -rf ghidra_9.2.2_PUBLIC_20201229.zip
   mkdir ghidra
-  mv ghidra_9.2.2_PUBLIC_20201229/* ghidra/
-  rm -rf ghidra_9.2.2_PUBLIC_20201229/
+  mv ghidra_9.2.2_PUBLIC/* ghidra/
+  rm -rf ghidra_9.2.2_PUBLIC/
 
   #ILSpy decompiler
   git clone https://github.com/icsharpcode/ILSpy.git
@@ -272,8 +272,8 @@ else
   unzip ghidra_9.2.2_PUBLIC_20201229.zip
   rm -rf ghidra_9.2.2_PUBLIC_20201229.zip
   mkdir ghidra
-  mv ghidra_9.2.2_PUBLIC_20201229/* ghidra/
-  rm -rf ghidra_9.2.2_PUBLIC_20201229/
+  mv ghidra_9.2.2_PUBLIC/* ghidra/
+  rm -rf ghidra_9.2.2_PUBLIC/
 fi
 
 #wireless drivers
