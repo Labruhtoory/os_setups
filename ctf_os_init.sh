@@ -152,6 +152,7 @@ then
   rm -rf BloodHound-linux-x64.zip
   mkdir bloodhound
   mv BloodHound-linux-x64/* bloodhound/
+  rm -rf BloodHound-linux-x64/
   mkdir /usr/share/neo4j/logs
   mkdir /usr/share/neo4j/run
   #defaul creds - neo4j:neo4j - need to change
