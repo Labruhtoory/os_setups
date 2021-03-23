@@ -199,6 +199,13 @@ then
   mkdir pmp
   mv poor-mans-pentest/* pmp/
   rm -rf poor-mans-pentest
+  
+  #github desktop
+  sudo wget https://github.com/shiftkey/desktop/releases/download/release-2.1.0-linux1/GitHubDesktop-linux-2.1.0-linux1.deb
+  sudo apt install -fy gconf2 gconf-service 
+  sudo apt --fix-broken install
+  sudo apt install -fy gconf2 gconf-service 
+  sudo dpkg -i GitHubDesktop-linux-2.1.0-linux1.deb
   fi
 else
   echo "OK, installing all packages"
