@@ -55,6 +55,9 @@ then
   #Responder
   https://github.com/SpiderLabs/Responder.git
   
+  #evil limiter
+  git clone https://github.com/bitbrute/evillimiter.git
+  
   fi
   if [ $(recon) == 'n' ]
   then
@@ -324,6 +327,9 @@ else
   mkdir ghidra
   mv ghidra_9.2.2_PUBLIC/* ghidra/
   rm -rf ghidra_9.2.2_PUBLIC/
+  
+  #evil limiter
+  git clone https://github.com/bitbrute/evillimiter.git
 fi
 
 #wireless drivers
