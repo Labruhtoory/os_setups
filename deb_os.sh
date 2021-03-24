@@ -174,6 +174,10 @@ then
   mkdir /usr/share/neo4j/logs
   mkdir /usr/share/neo4j/run
   #defaul creds - neo4j:neo4j - need to change
+  
+  #SecLists
+  git clone https://github.com/danielmiessler/SecLists.git
+  
   fi
   if [ $(anon) == 'n' ]
   then
@@ -309,6 +313,9 @@ else
   mkdir /usr/share/neo4j/logs
   mkdir /usr/share/neo4j/run
   #defaul creds - neo4j:neo4j - need to change
+  
+  #SecLists
+  git clone https://github.com/danielmiessler/SecLists.git
 
   #ghidra
   wget https://ghidra-sre.org/ghidra_9.2.2_PUBLIC_20201229.zip
