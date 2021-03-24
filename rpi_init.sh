@@ -106,6 +106,9 @@ then
   echo 'No post...'
   else
   sudo apt install -fy wordlists backdoor-factory crunch hash-identifier john johnny hashcat
+ 
+  #SecLists
+  git clone https://github.com/danielmiessler/SecLists.git
   fi
   if [ $(anon) == 'n' ]
   then
@@ -176,6 +179,13 @@ else
   #kerbrute
   wget https://github.com/ropnop/kerbrute/releases/download/v1.0.3/kerbrute_linux_amd64
   mv kerbrute_linux_amd64 /usr/bin/kerbrute
+  
+  #SecLists
+  git clone https://github.com/danielmiessler/SecLists.git
+  
+  #evil limiter
+  git clone https://github.com/bitbrute/evillimiter.git
+  
 fi
 
 #wireless drivers
