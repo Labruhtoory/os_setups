@@ -315,7 +315,16 @@ cd rtl8812au/
 make && make install
 cd /opt/
     
-#aliases
+#root aliases
+echo "alias up='python3 -m http.server 8000'" >> ~/.bashrc
+echo "alias room='bash /opt/wagames_os/notes/room-box_notes_start.sh'" >> ~/.bashrc
+echo "alias dirsearch='python3 /opt/dirsearch/dirsearch.py'" >> ~/.bashrc
+echo "alias ghidra='bash /opt/ghidra/ghidraRun'" >> ~/.bashrc
+echo "alias photon='python3 /opt/Photon/photon.py'" >> ~/.bashrc
+echo "alias bloodhound='cd bash /opt/bloodhound/Bloodhound'" >> ~/.bashrc
+echo "alias screenres='bash /opt/screenres.sh'" >> ~/.bashrc
+
+#user aliases
 echo "alias up='python3 -m http.server 8000'" >> ~/.bashrc
 echo "alias room='bash /opt/wagames_os/notes/room-box_notes_start.sh'" >> ~/.bashrc
 echo "alias dirsearch='python3 /opt/dirsearch/dirsearch.py'" >> ~/.bashrc
