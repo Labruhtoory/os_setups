@@ -40,6 +40,10 @@ then
   echo 'No net...'
   else
   sudo apt install -fy nmap masscan aircrack-ng wifite pixiewps bettercap clusterssh netdiscover reaver rtpflood
+  
+  #evil limiter
+  git clone https://github.com/bitbrute/evillimiter.git
+  
   fi
   if [ $(recon) == 'n' ]
   then
