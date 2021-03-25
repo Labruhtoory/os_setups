@@ -30,6 +30,7 @@ then
   echo 'xrandr --addmode Virtual1 1920x1080' >> screenres.sh
   echo 'xrandr --output Virtual1 --mode 1920x1080' >> screenres.sh
   chmod +x screenres.sh
+else
 fi
 
 if [ $(repo) == 'y' ]
@@ -41,6 +42,7 @@ then
   echo '# Kali linux repositories | Added by Katoolin' >> /etc/apt/sources.list
   echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
   apt-get update
+else
 fi
 
 if [ $(full) == 'n' ] 
