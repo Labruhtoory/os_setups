@@ -10,7 +10,7 @@ echo 'keep in mind the default for this answer is yes...'
 read -p 'Full Install? y/n> ' full
 
 
-if [ $fisys == 'y']
+if [ $fisys == "y" ]
 then
   echo 'moving to /opt'
   #init
@@ -35,7 +35,7 @@ else
  echo "No changes to your file sys"
 fi
 
-if [ $repo == 'y' ]
+if [ $repo == "y" ]
 then
   echo 'adding apt repo'
   #repo
@@ -48,7 +48,7 @@ else
   echo "No changes to your repositories"
 fi
 
-if [ $(full) == 'n' ] 
+if [ $(full) == "n" ] 
 then
   sudo apt install -fy python3 python3-pip sqlitebrowser golang nasm default-jdk terminator
   sudo apt --fix-broken install
@@ -64,7 +64,7 @@ then
   read -p 'Xploit?> ' xploit
   read -p 'Post?> ' post
   read -p 'Anon?> ' anon
-  if [ $(net) == 'n' ]
+  if [ $(net) == "n" ]
   then
   echo 'No net...'
   else
@@ -78,7 +78,7 @@ then
   git clone https://github.com/bitbrute/evillimiter.git
   
   fi
-  if [ $(recon) == 'n' ]
+  if [ $(recon) == "n" ]
   then
   echo 'No recon...'
   else
@@ -110,7 +110,7 @@ then
   mv ./goscan /bin/goscan
   
   fi
-  if [ $(enum) == 'n' ]
+  if [ $(enum) == "n" ]
   then
   echo 'No enum...'
   else
@@ -136,7 +136,7 @@ then
   #dirsearch
   git clone https://github.com/maurosoria/dirsearch.git
   fi
-  if [ $(revfor) == 'n' ]
+  if [ $(revfor) == "n" ]
   then
   echo 'No revfor...'
   else
@@ -166,7 +166,7 @@ then
   #ILSpy decompiler
   git clone https://github.com/icsharpcode/ILSpy.git
   fi
-  if [ $(xploit) == 'n' ]
+  if [ $(xploit) == "n" ]
   then
   echo 'No xploit...'
   else
@@ -186,7 +186,7 @@ then
   #PSEmpire
   git clone https://github.com/EmpireProject/Empire.git
   fi
-  if [ $(post) == 'n' ]
+  if [ $(post) == "n" ]
   then
   echo 'No post...'
   else
@@ -208,14 +208,14 @@ then
   git clone https://github.com/danielmiessler/SecLists.git
   
   fi
-  if [ $(anon) == 'n' ]
+  if [ $(anon) == "n" ]
   then
   echo 'No anon...'
   else
   sudo apt install -fy openvpn tor torbrowser-launcher
   sudo apt --fix-broken install
   fi
-  if [ $(cus) == 'n' ]
+  if [ $(cus) == "n" ]
   then
   echo 'No custom...'
   else
