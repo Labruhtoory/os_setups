@@ -223,7 +223,7 @@ else
   echo "OK, installing all packages"
   
   #initial stuff
-  sudo apt install -fy kali-menu python3 python3-pip sqlitebrowser golang nasm default-jdk terminator
+  sudo apt install -fy python3 python3-pip sqlitebrowser golang nasm default-jdk terminator
   sudo apt --fix-broken install
   #programming language support
   sudo python3 -m pip install --upgrade 
