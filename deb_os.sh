@@ -31,7 +31,7 @@ echo 'keep in mind the default answer is yes...'
 read -p 'Full? y/n> ' full
 if [ $(full) == 'n' ] 
 then
-  sudo apt install -fy kali-menu python3 python3-pip sqlitebrowser golang nasm default-jdk terminator
+  sudo apt install -fy python3 python3-pip sqlitebrowser golang nasm default-jdk terminator
   sudo apt --fix-broken install
   #programming language support
   sudo python3 -m pip install --upgrade pip
@@ -228,7 +228,7 @@ else
   #programming language support
   sudo python3 -m pip install --upgrade 
   
-  sudo apt install -fy wireshark kali-menu python3 python3-pip sqlitebrowser golang terminator openvpn gnome-tweaks exiftool nasm binwalk default-jdk radare2 gdb gqrx-sdr clusterssh audacity neo4j tor torbrowser-launcher nmap masscan exploitdb armitage set nikto osrframework recon-ng netdiscover legion voiphopper zaproxy enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 reaver aircrack-ng rtlsdr-scanner gqrx-sdr wifite pixiewps burpsuite dirb dirbuster gobuster wpscan wordlists sqlmap sqlninja uniscan websploit ffuf siparmyknife powersploit backdoor-factory veil-evasion bettercap beef-xss rtpflood crunch hash-identifier john johnny rainbowcrack hashcat arduino
+  sudo apt install -fy wireshark python3 python3-pip sqlitebrowser golang terminator openvpn gnome-tweaks exiftool nasm binwalk default-jdk radare2 gdb gqrx-sdr clusterssh audacity neo4j tor torbrowser-launcher nmap masscan exploitdb armitage set nikto osrframework recon-ng netdiscover legion voiphopper zaproxy enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 reaver aircrack-ng rtlsdr-scanner gqrx-sdr wifite pixiewps burpsuite dirb dirbuster gobuster wpscan wordlists sqlmap sqlninja uniscan websploit ffuf siparmyknife powersploit backdoor-factory veil-evasion bettercap beef-xss rtpflood crunch hash-identifier john johnny rainbowcrack hashcat arduino
   sudo apt --fix-broken install
   
   
