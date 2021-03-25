@@ -10,7 +10,7 @@ echo 'keep in mind the default for this answer is yes...'
 read -p 'Full Install? y/n> ' full
 
 
-if [ $(fisys) == 'y']
+if [ $fisys == 'y']
 then
   echo 'moving to /opt'
   #init
@@ -30,10 +30,12 @@ then
   echo 'xrandr --addmode Virtual1 1920x1080' >> screenres.sh
   echo 'xrandr --output Virtual1 --mode 1920x1080' >> screenres.sh
   chmod +x screenres.sh
+  bash screenres.sh
 else
+ echo "No changes to your file sys"
 fi
 
-if [ $(repo) == 'y' ]
+if [ $repo == 'y' ]
 then
   echo 'adding apt repo'
   #repo
@@ -42,7 +44,8 @@ then
   echo '# Kali linux repositories | Added by Katoolin' >> /etc/apt/sources.list
   echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
   apt-get update
-else
+else 
+  echo "No changes to your repositories"
 fi
 
 if [ $(full) == 'n' ] 
