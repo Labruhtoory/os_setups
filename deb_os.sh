@@ -2,9 +2,11 @@
 
 #get info
 read -p "Username 4 this box: " uboi
-read -p 'Need repo? ' repo
-echo 'keep in mind the default answer is yes...'
-read -p 'Need to prep file sys?' fisys
+echo "default no..."
+read -p 'Need repo? y/n>  ' repo
+echo "default no..."
+read -p 'Need to prep file sys? y/n> ' fisys
+echo 'keep in mind the default for this answer is yes...'
 read -p 'Full Install? y/n> ' full
 
 
@@ -28,6 +30,7 @@ then
   echo 'xrandr --addmode Virtual1 1920x1080' >> screenres.sh
   echo 'xrandr --output Virtual1 --mode 1920x1080' >> screenres.sh
   chmod +x screenres.sh
+fi
 
 if [ $(repo) == 'y' ]
 then
@@ -38,7 +41,7 @@ then
   echo '# Kali linux repositories | Added by Katoolin' >> /etc/apt/sources.list
   echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
   apt-get update
-
+fi
 
 if [ $(full) == 'n' ] 
 then
