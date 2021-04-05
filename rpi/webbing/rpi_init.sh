@@ -24,6 +24,7 @@ echo "nameserver 1.1.1.1" > /etc/resolv.conf
 echo "nameserver 1.0.0.1" >> /etc/resolv.conf
 
 echo 'started decision process... deciding'
+<<Blockthis4now
 if [ $full == "n" ] 
 then
   echo "OK, Please choose you packages (y/n)..."
@@ -69,6 +70,15 @@ else
   #photon
   git clone https://github.com/s0md3v/Photon.git
 fi
+Blockthis4now
+
+sudo apt install -fy python python3 python3-pip golang nasm default-jdk openvpn tor proxychains nginx nikto dmitry dnstracer dirb dirbuster gobuster exiftool binwalk radare2 gdb
+
+#dirsearch
+git clone https://github.com/maurosoria/dirsearch.git
+
+#photon
+git clone https://github.com/s0md3v/Photon.git
 
 #wireless drivers
 apt install -y build-essential libelf-dev linux-headers-`uname -r`
