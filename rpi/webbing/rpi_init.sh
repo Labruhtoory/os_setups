@@ -23,7 +23,7 @@ mkdir /webtmp
 echo "nameserver 1.1.1.1" > /etc/resolv.conf
 echo "nameserver 1.0.0.1" >> /etc/resolv.conf
 
-if [ $(full) == 'n' ] 
+if [ $full == "n" ] 
 then
   echo "OK, Please choose you packages (y/n)..."
   read -p 'Cloud?> ' cloud
