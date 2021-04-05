@@ -80,13 +80,5 @@ git clone https://github.com/maurosoria/dirsearch.git
 #photon
 git clone https://github.com/s0md3v/Photon.git
 
-#wireless drivers
-apt install -y build-essential libelf-dev linux-headers-`uname -r`
-apt install -y realtek-rtl88xxau-dkms
-git clone https://github.com/aircrack-ng/rtl8812au.git
-cd rtl8812au/
-make && make install
-cd /opt/
-
 chmod -R 777 /opt/
 sudo reboot now
