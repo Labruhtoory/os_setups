@@ -33,10 +33,6 @@ then
   if [ $(cloud) == 'n' ]
   then
   echo 'No Clouds...'
-  else
-  
-
-  fi
   if [ $(anon) == 'n' ]
   then
   echo 'No Anon...'
