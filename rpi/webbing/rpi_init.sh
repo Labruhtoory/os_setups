@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo 'keep in mind the default answer is yes...'
+read -p 'Full? y/n> ' full
+
 echo 'adding apt repo'
 #repo
 echo "" > /etc/apt/sources.list
@@ -20,8 +23,6 @@ mkdir /webtmp
 echo "nameserver 1.1.1.1" > /etv/resolv.conf
 echo "nameserver 1.0.0.1" >> /etv/resolv.conf
 
-echo 'keep in mind the default answer is yes...'
-read -p 'Full? y/n> ' full
 if [ $(full) == 'n' ] 
 then
   echo "OK, Please choose you packages (y/n)..."
