@@ -18,7 +18,7 @@ mkdir /webtmp
 echo "nameserver 1.1.1.1" > /etc/resolv.conf
 echo "nameserver 1.0.0.1" >> /etc/resolv.conf
 
-sudo apt install -fy python python3 python3-pip golang nasm default-jdk openvpn tor proxychains nginx nikto dmitry dnstracer dirb dirbuster gobuster exiftool binwalk radare2 gdb
+sudo apt install -fy python python3 python3-pip golang openvpn tor proxychains nginx nikto dmitry dnstracer dirb dirbuster gobuster exiftool binwalk radare2 gdb
 #programming language support
 sudo python3 -m pip install --upgrade pip
 
@@ -27,6 +27,3 @@ git clone https://github.com/maurosoria/dirsearch.git
 
 #photon
 git clone https://github.com/s0md3v/Photon.git
-
-chmod -R 777 /opt/
-sudo reboot now
