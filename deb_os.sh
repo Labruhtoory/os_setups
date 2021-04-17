@@ -60,6 +60,7 @@ then
   #remote init
   wget https://www.realvnc.com/download/file/vnc.files/VNC-Server-6.7.4-Linux-x64.deb -O vnc.deb
   dpkg -i vnc.deb
+  rm -rf vnc.deb
   #programming language support
   sudo python3 -m pip install --upgrade pip
 
