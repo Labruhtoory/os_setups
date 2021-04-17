@@ -44,14 +44,22 @@ then
   echo '# Kali linux repositories | Added by Katoolin' >> /etc/apt/sources.list
   echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
   apt-get update
+  apt install snapd
 else 
   echo "No changes to your repositories"
 fi
 
 if [ $(full) == "n" ] 
 then
-  sudo apt install -fy python3 python3-pip sqlitebrowser golang nasm default-jdk terminator
+  #apt init
+  sudo apt install -fy python3 python3-pip sqlitebrowser golang nasm default-jdk terminator 
+  #snap init
+  sudo snap install code --classic
+  sudo snap install sublime-text --classic
   sudo apt --fix-broken install
+  #remote init
+  wget https://www.realvnc.com/download/file/vnc.files/VNC-Server-6.7.4-Linux-x64.deb -O vnc.deb
+  dpkg -i vnc.deb
   #programming language support
   sudo python3 -m pip install --upgrade pip
 
