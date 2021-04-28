@@ -18,7 +18,7 @@ source /home/$uboi/.bash_aliases
 
 #root aliases
 echo "alias up='python3 -m http.server 8000'" >> /root/.bashrc
-echo "alias room='bash /opt/wagames_os/notes/room-box_notes_start.sh'" >> /root/.bash_aliases
+echo "alias room='bash /opt/notes/room-box_notes_start.sh'" >> /root/.bash_aliases
 echo "alias dirsearch='python3 /opt/dirsearch/dirsearch.py'" >> /root/.bash_aliases
 echo "alias ghidra='bash /opt/ghidra/ghidraRun'" >> /root/.bash_aliases
 echo "alias photon='python3 /opt/Photon/photon.py'" >> /root/.bash_aliases
