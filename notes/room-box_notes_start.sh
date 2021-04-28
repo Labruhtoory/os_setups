@@ -3,6 +3,7 @@
 
 subl readme.txt
 cp /opt/notes/pen_notes_template.ctb* .
+mv pen_notes_template.ctb notes.ctb
 mv pen_notes_template.ctb~ notes.ctb~
 mv pen_notes_template.ctb~~ notes.ctb~~
 mv pen_notes_template.ctb~~~ notes.ctb~~~
