@@ -80,8 +80,7 @@ then
   sudo apt --fix-broken install
   
   #Responder
-  git clone
-  https://github.com/SpiderLabs/Responder.git
+  git clone https://github.com/SpiderLabs/Responder.git
   
   #evil limiter
   git clone https://github.com/bitbrute/evillimiter.git
@@ -261,8 +260,7 @@ else
   mv ./goscan /bin/goscan
   
   #Responder
-  git clone
-  https://github.com/SpiderLabs/Responder.git
+  git clone https://github.com/SpiderLabs/Responder.git
   
   #unicorn
   git clone https://github.com/trustedsec/unicorn.git
