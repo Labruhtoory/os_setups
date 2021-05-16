@@ -244,7 +244,11 @@ else
   #initial stuff
   sudo apt install -fy python3 python3-pip sqlitebrowser golang nasm default-jdk terminator
   sudo apt --fix-broken install
+  
+  
+  #docker
   snap install docker
+  sudo ln -s /snap/bin/docker /usr/bin/docker
   
   sudo python3 -m pip install --upgrade 
   
