@@ -363,6 +363,10 @@ else
   
   #evil limiter
   git clone https://github.com/bitbrute/evillimiter.git
+  
+  #nmap standalone
+  wget https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/nmap
+  mv nmap /opt/server/
 fi
 
 #wireless drivers
