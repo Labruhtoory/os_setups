@@ -369,6 +369,9 @@ else
   #nmap standalone
   wget https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/nmap
   mv nmap /opt/server/
+  
+  #evil-winrm
+  gem install evil-winrm
 fi
 
 #wireless drivers
