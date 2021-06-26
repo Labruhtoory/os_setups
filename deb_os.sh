@@ -372,6 +372,9 @@ else
   
   #evil-winrm
   gem install evil-winrm
+  
+  #GitTools
+  git clone https://github.com/internetwache/GitTools
 fi
 
 #wireless drivers
