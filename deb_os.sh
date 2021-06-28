@@ -375,6 +375,12 @@ else
   
   #GitTools
   git clone https://github.com/internetwache/GitTools
+  
+  #impacket
+  wget https://github.com/SecureAuthCorp/impacket/releases/download/impacket_0_9_23/impacket-0.9.23.tar.gz
+  gunzip impacket-0.9.23.tar.gz
+  tar -xvf impacket-0.9.23.tar
+  rm -rf impacket-0.9.23.tar
 fi
 
 #wireless drivers
