@@ -381,6 +381,9 @@ else
   gunzip impacket-0.9.23.tar.gz
   tar -xvf impacket-0.9.23.tar
   rm -rf impacket-0.9.23.tar
+  
+  #RsaCtfTool
+  git clone https://github.com/Ganapati/RsaCtfTool.git
 fi
 
 #wireless drivers
