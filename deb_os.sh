@@ -55,7 +55,6 @@ then
   sudo apt install -fy python3 python3-pip sqlitebrowser golang nasm default-jdk terminator 
   #snap init
   sudo snap install code --classic
-  sudo snap install sublime-text --classic
   sudo apt --fix-broken install
   #remote init
   wget https://www.realvnc.com/download/file/vnc.files/VNC-Server-6.7.4-Linux-x64.deb -O vnc.deb
@@ -385,6 +384,11 @@ else
   #RsaCtfTool
   git clone https://github.com/Ganapati/RsaCtfTool.git
 fi
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo apt-get install apt-transport-https
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update
+sudo apt-get install sublime-text
 
 #wireless drivers
 apt install -y build-essential libelf-dev linux-headers-`uname -r`
