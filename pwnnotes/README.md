@@ -2,7 +2,7 @@ Get Started:
 
 * Make sure that sublime text and cherrytree are installed on your system
 
-      sudo git clone https://github.com/Labruhtoory/pwnnotes.git && cd pwnnotes && chmod +x setup.sh && ./setup.sh
+      sudo git clone https://github.com/Labruhtoory/os_setupss.git && cd os_setups/pwnnotes && chmod +x setup.sh && ./setup.sh
 
 * In order to activate everything, just run 'room' preferably in an empty folder
 
