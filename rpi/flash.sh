@@ -1,7 +1,7 @@
 #!/bin/bash
 
 read -p "What is the full path to the rpi os image?> " imgdir
-read -p "Choose a name to create a folder to mount to> "
+read -p "Choose a name to create a folder to mount to> " mdir
 read -p "Would you like to enable ssh?> " sshen
 clear
 
