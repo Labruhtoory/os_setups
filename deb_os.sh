@@ -244,23 +244,24 @@ else
   echo "OK, installing all packages"
   
   #initial stuff
-  sudo apt install -fy python2 python3 python3-pip sqlitebrowser golang nasm default-jdk terminator
+  sudo apt install -fy python2 python3 python3-pip sqlitebrowser golang nasm default-jdk terminator git docker
+  sudo apt update --fix-missing
   sudo apt --fix-broken install
   
-  
-  #docker
-  snap install docker
-  sudo ln -s /snap/bin/docker /usr/bin/docker
   
   sudo python3 -m pip install --upgrade 
   curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
   sudo python2 get-pip.py
+  sudo apt update --fix-missing
+  sudo apt --fix-broken install 
   
-  sudo apt install -fy cherrytree wireshark python3 python3-pip sqlitebrowser golang terminator openvpn gnome-tweaks exiftool nasm binwalk default-jdk radare2 gdb gqrx-sdr clusterssh audacity bloodhound tor torbrowser-launcher nmap masscan exploitdb armitage set dsniff nikto osrframework recon-ng netdiscover legion voiphopper zaproxy enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 reaver aircrack-ng rtlsdr-scanner gqrx-sdr wifite pixiewps burpsuite dirb dirbuster gobuster wpscan wordlists sqlmap sqlninja uniscan websploit ffuf siparmyknife powersploit backdoor-factory veil-evasion bettercap beef-xss rtpflood crunch hash-identifier john johnny rainbowcrack hashcat arduin0o powershell-empire starkiller
+  sudo apt install -fy cherrytree wireshark python3 python3-pip sqlitebrowser golang terminator openvpn gnome-tweaks audacity exiftool nasm binwalk default-jdk radare2 gdb gqrx-sdr clusterssh audacity bloodhound tor torbrowser-launcher nmap masscan exploitdb armitage set dsniff nikto osrframework recon-ng netdiscover legion voiphopper zaproxy enum4linux dmitry dnsrecon dnstracer theharvester thc-ipv6 reaver aircrack-ng rtlsdr-scanner gqrx-sdr wifite pixiewps burpsuite dirb dirbuster gobuster wpscan wordlists sqlmap sqlninja uniscan websploit ffuf siparmyknife powersploit backdoor-factory veil-evasion bettercap beef-xss rtpflood crunch hash-identifier john johnny rainbowcrack hashcat arduino powershell-empire starkiller
+  sudo apt update --fix-missing
   sudo apt --fix-broken install
   
   pip3 install bloodhound 
   
+  snap install sublime-text --classic
   
   #goscan
   wget https://github.com/marco-lancini/goscan/releases/download/v2.4/goscan_2.4_linux_amd64.zip
@@ -387,11 +388,11 @@ else
   #RsaCtfTool
   git clone https://github.com/Ganapati/RsaCtfTool.git
 fi
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-sudo apt-get install apt-transport-https
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-sudo apt-get update
-sudo apt-get install sublime-text
+#wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+#sudo apt-get install apt-transport-https
+#echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+#sudo apt-get update
+#sudo apt-get install sublime-text
 
 #wireless drivers
 apt install -y build-essential libelf-dev linux-headers-`uname -r`
