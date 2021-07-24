@@ -1,7 +1,6 @@
 #!/bin/bash
 
 read -p "What is the full path to the rpi os image?> " imgdir
-read -p "Choose a name to create a folder to mount to> " mdir
 read -p "Would you like to enable ssh?> " sshen
 clear
 
@@ -24,8 +23,8 @@ read -p "What is the drive identifier? (Ex: sda, sdb, sdc)> " dv
 echo "Formatting drive..."
 sudo umount /dev/$dv*
 sudo parted /dev/$dv --script -- mklabel msdos
-sudo parted /dev/sdv --script -- mkpart primary fat32 1MiB 100%
-sudo mkfs.fat -F32 /dev/$dv1
+sudo parted /dev/$dv --script -- mkpart primary fat32 1MiB 100%
+sudo mkfs.fat -F32 /dev/${dv}1
 clear
 
 echo "Copying files..."
@@ -34,16 +33,14 @@ clear
 
 if [[ $sshen = y ]] ; then
 	echo "Enabling ssh..."
-	sudo mkdir /opt/$mdir
-	sudo mount /dev/$dv1 /opt/$mdir
-  	touch /opt/$mdir/ssh
-	umount /dev/$dv*
-	rm -rf /opt/$mdir
+	sudo mount /dev/${dv}1 /mnt
+  touch /mnt/ssh
+	umount /mnt
 	clear
 fi
 
 echo "Image Flashed: $imgdir"
-echo "Mount Location Used: /opt/$mdir"
+echo "Drive: /dev/$dv"
 if [[ $sshen = y ]] ; then
 	echo "SSH: enabled"
 else
