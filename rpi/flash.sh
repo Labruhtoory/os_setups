@@ -1,14 +1,14 @@
 #!/bin/bash
 
-read -p "What is the full path to the rpi os image? " dir
-read -p "What is the name of the folder that you would like to mount to? " mdir
-read -p "Would you like to enable ssh? " sshen
+read -p "What is the full path to the rpi os image?> " imgdir
+read -p "Choose a name to create a folder to mount to> "
+read -p "Would you like to enable ssh?> " sshen
+clear
 
-echo "Setting up drive partition....."
-echo "Please insert a drive with the desired (EMPTY) partition to use....."
-lsblk | grep "disk\|part"
-echo "Have you plugged in a drive? If not, now is the time to do it....."
-echo "Press 'c' to continue....."
+echo "Setting up drive..."
+lsblk
+echo "Have you plugged in the sd card yet?"
+echo "Press c to continue..."
 while : ; do
 read -n 1 k <&1
 if [[ $k = c ]] ; then
@@ -18,48 +18,35 @@ break
 fi
 done
 clear
-lsblk | grep "disk\|part"
-echo ""
-read -p "What is the label of the partition to use? (Ex: sdb1, sdc1) " drivep
-echo ""
-echo ""
-echo "Cleaning partition..."
-mkfs.ext4 /dev/$drivep
-echo ""
-echo ""
+
+lsblk
+read -p "What is the drive identifier? (Ex: sda, sdb, sdc)> " dv
+echo "Formatting drive..."
+sudo umount /dev/$dv*
+sudo parted /dev/$dv --script -- mklabel msdos
+sudo parted /dev/sdv --script -- mkpart primary fat32 1MiB 100%
+sudo mkfs.fat -F32 /dev/$dv1
+clear
+
 echo "Copying files..."
-dd if=$dir of=/dev/$drivep bs=2M
-echo ""
-echo ""
+sudo dd if=$imgdir of=/dev/$dv bs=4M; sync
+clear
+
 if [[ $sshen = y ]] ; then
 	echo "Enabling ssh..."
-	sudo mkdir /rpidrive
-	sudo mount /dev/$drivep /rpidrive
-  	touch /rpidrive/ssh
+	sudo mkdir /opt/$mdir
+	sudo mount /dev/$dv1 /opt/$mdir
+  	touch /opt/$mdir/ssh
+	umount /dev/$dv*
+	rm -rf /opt/$mdir
 	clear
-	ls /rpidrive
-	umount /dev/$drivep
 fi
 
-
-clear
-echo "Image Flashed: $dir"
-echo "Mount Location: /$mdir"
+echo "Image Flashed: $imgdir"
+echo "Mount Location Used: /opt/$mdir"
 if [[ $sshen = y ]] ; then
 	echo "SSH: enabled"
 else
   echo "SSH: not enabled"
 fi
-echo "Processed delayed for performing a user-confirmation..."
-echo "Continuing will umount the volume, making it safe to eject..."
-echo "Press 'c' to continue....."
-while : ; do
-read -n 1 k <&1
-if [[ $k = c ]] ; then
-	echo ""
-printf "Ok then, moving on....."
-break
-fi
-done
-clear
 echo "Done!"
