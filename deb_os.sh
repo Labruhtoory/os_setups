@@ -12,6 +12,9 @@ read -p 'Full Install? y/n> ' full
 
 if [ $fisys == "y" ]
 then
+  cp -r pwnnotes/ /opt
+  chmod 777 /opt/pwnnotes/setup.sh
+  bash /opt/pwnnotes/setup.sh
   echo 'moving to /opt'
   #init
   cd /opt
