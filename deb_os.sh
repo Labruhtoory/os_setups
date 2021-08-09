@@ -43,12 +43,8 @@ then
   echo 'adding apt repo'
   #repo
   #echo "" > /etc/apt/sources.list
-  #apt-key adv --keyserver pool.sks-keyservers.net --recv-keys ED444FF07D8D0BF6
-  #sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ED444FF07D8D0BF6
-  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 363A96A5CEA9EA27
-  #echo '# Kali linux repositories | Added by Katoolin' >> /etc/apt/sources.list
-  #echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
-  echo "deb https://deb.parrot.sh/parrot/ rolling main contrib non-free" >> /etc/apt/sources.list
+  wget -q -O - archive.kali.org/archive-key.asc | apt-key add
+  echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
   apt-get update
   apt install snapd
 else 
