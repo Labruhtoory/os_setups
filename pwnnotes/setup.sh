@@ -30,7 +30,7 @@ echo "alias bloodhound='cd bash /opt/bloodhound/Bloodhound'" >> /root/.bash_alia
 echo "alias screenres='bash /opt/screenres.sh'" >> /root/.bash_aliases
 echo "alias thmvpn='sudo openvpn ~/Desktop/thm.ovpn'" >> /root/.bash_aliases
 echo "alias htbvpn='sudo openvpn ~/Desktop/htb.ovpn'" >> /root/.bash_aliases
-echo "alias g=lol" >> /home/$uboi/.bash_aliases
+echo "alias g=lol" >> /root/.bash_aliases
 # "git add . && git commit -am 'changes' && git push"
 source /root/.bash_aliases
 
