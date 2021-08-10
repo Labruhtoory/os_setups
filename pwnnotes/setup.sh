@@ -15,7 +15,7 @@ echo "alias bloodhound='cd bash /opt/bloodhound/Bloodhound'" >> /home/$uboi/.bas
 echo "alias screenres='bash /opt/screenres.sh'" >> /home/$uboi/.bash_aliases
 echo "alias thmvpn='sudo openvpn ~/Desktop/thm.ovpn'" >> /home/$uboi/.bash_aliases
 echo "alias htbvpn='sudo openvpn ~/Desktop/htb.ovpn'" >> /home/$uboi/.bash_aliases
-echo "alias ga='git add * && git commit && git push'" >> /home/$uboi/.bash_aliases
+echo "alias ga='git add * && git commit -am 'changes' && git push'" >> /home/$uboi/.bash_aliases
 echo "alias gs='echo git remote set-url origin git@github.com:Username/Project.git'" >> /home/$uboi/.bash_aliases
 # "git add . && git commit -am 'changes' && git push"
 
@@ -32,7 +32,7 @@ echo "alias screenres='bash /opt/screenres.sh'" >> /root/.bash_aliases
 echo "alias thmvpn='sudo openvpn ~/Desktop/thm.ovpn'" >> /root/.bash_aliases
 echo "alias htbvpn='sudo openvpn ~/Desktop/htb.ovpn'" >> /root/.bash_aliases
 echo "alias gs='echo git remote set-url origin git@github.com:Username/Project.git'" >> /root/.bash_aliases
-echo "alias ga='git add * && git commit && git push'" >> /root/.bash_aliases
+echo "alias ga='git add * && git commit -am 'changes' && git push'" >> /root/.bash_aliases
 # "git add . && git commit -am 'changes' && git push"
 source /root/.bash_aliases
 
