@@ -34,7 +34,7 @@ make && make install
 cd /opt/
 chmod -R 777 /opt/
 
-#office
+                    #office
 
 #subl
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -55,3 +55,9 @@ rm -rf VNC-Viewer-6.21.406-Linux-x64.deb
 wget https://discord.com/api/download?platform=linux&amp;format=deb
 dpkg -i discord*
 rm -rf discord*
+
+                    
+                    #Configs
+
+#~/.config/terminator/config
+
