@@ -44,7 +44,7 @@ sudo apt-get update
 sudo apt-get install sublime-text
 
 #Thunderbird & Libre
-apt install -fy thunderbird libreoffice
+apt install -fy terminator thunderbird libreoffice
 
 #VNCviewer
 wget https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.21.406-Linux-x64.deb
