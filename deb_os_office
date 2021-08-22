@@ -1,1 +1,34 @@
+#!/bin/bash
 
+cp -r pwnnotes/ /opt
+  chmod 777 /opt/pwnnotes/setup.sh
+  bash /opt/pwnnotes/setup.sh
+  echo 'moving to /opt'
+  #init
+  cd /opt
+  mkdir server
+  mkdir /ctf
+  mkdir /thm
+  mkdir /htb
+  
+  #networking
+  clear
+  
+  echo "nameserver 1.1.1.1" > /etc/resolv.conf
+  echo "nameserver 1.0.0.1" >> /etc/resolv.conf
+  
+  clear
+  echo 'adding apt repo'
+  #repo
+  #echo "" > /etc/apt/sources.list
+  wget -q -O - archive.kali.org/archive-key.asc | apt-key add
+  echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
+  apt-get update
+  
+  #wireless drivers
+apt install -y build-essential libelf-dev linux-headers-`uname -r`
+apt install -y realtek-rtl88xxau-dkms
+git clone https://github.com/aircrack-ng/rtl8812au.git
+cd rtl8812au/
+make && make install
+cd /opt/
