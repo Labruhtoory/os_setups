@@ -17,17 +17,12 @@ echo "nameserver 1.0.0.1" >> /etc/resolv.conf
 
   
 #wireless drivers
-apt install -fy build-essential libelf-dev linux-headers-`uname -r`
+apt install -fy build-essential libelf-dev linux-headers-`uname -r` bc dkms
 #apt install -fy realtek-rtl88xxau-dkms
-sudo apt-get install dkms
-git clone https://github.com/ParrotSec/realtek-rtl88xxau-dkms.git
-
-#
 git clone https://github.com/aircrack-ng/rtl8812au.git
 cd rtl8812au/
 make && make install
 cd /opt/
-chmod -R 777 /opt/
 
                     #office
 
@@ -55,4 +50,4 @@ rm -rf discord*
                     #Configs
 
 #~/.config/terminator/config
-
+chmod -R 777 /opt/
