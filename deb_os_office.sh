@@ -1,5 +1,14 @@
 #!/bin/bash
 
+                    #Configs
+read -p "user for this box: " uboi 
+
+mv configs/terminator /home/$uboi/.config/terminator/config
+chown $uboi /home/$uboi/.config/terminator/config
+
+
+apt install -fy build-essential libelf-dev linux-headers-`uname -r` bc dkms apt-transport-https terminator thunderbird libreoffice
+
 cp -r pwnnotes/ /opt
 chmod 777 /opt/pwnnotes/setup.sh
 bash /opt/pwnnotes/setup.sh
@@ -17,7 +26,7 @@ echo "nameserver 1.0.0.1" >> /etc/resolv.conf
 
   
 #wireless drivers
-apt install -fy build-essential libelf-dev linux-headers-`uname -r` bc dkms
+#apt install -fy build-essential libelf-dev linux-headers-`uname -r` bc dkms
 #apt install -fy realtek-rtl88xxau-dkms
 git clone https://github.com/aircrack-ng/rtl8812au.git
 cd rtl8812au/
@@ -28,26 +37,18 @@ cd /opt/
 
 #subl
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-sudo apt-get install apt-transport-https
+#sudo apt-get install apt-transport-https
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
 sudo apt-get install sublime-text
 
 #Thunderbird & Libre
-apt install -fy terminator thunderbird libreoffice
+#apt install -fy terminator thunderbird libreoffice
 
-#VNCviewer
-wget https://www.realvnc.com/download/file/viewer.files/VNC-Viewer-6.21.406-Linux-x64.deb
-dpkg -i VNC-Viewer-6.21.406-Linux-x64.deb
-rm -rf VNC-Viewer-6.21.406-Linux-x64.deb
 
-#Discord
-wget https://discord.com/api/download?platform=linux&amp;format=deb
-dpkg -i discord*
-rm -rf discord*
+#Download
+x-www-browser https://www.realvnc.com/en/connect/download/viewer/
+x-www-browser https://discord.com/download
 
-                    
-                    #Configs
-
-#~/.config/terminator/config
 chmod -R 777 /opt/
+
