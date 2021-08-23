@@ -12,22 +12,17 @@ mkdir /thm
 mkdir /htb
   
 #networking
-clear
 echo "nameserver 1.1.1.1" > /etc/resolv.conf
 echo "nameserver 1.0.0.1" >> /etc/resolv.conf
-  
-clear
-echo 'adding apt repo'
-#repo
-#echo "" > /etc/apt/sources.list
-wget -q -O - archive.kali.org/archive-key.asc | apt-key add
-echo 'deb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
-apt-get update
+
   
 #wireless drivers
-clear
 apt install -fy build-essential libelf-dev linux-headers-`uname -r`
-apt install -fy realtek-rtl88xxau-dkms
+#apt install -fy realtek-rtl88xxau-dkms
+sudo apt-get install dkms
+git clone https://github.com/ParrotSec/realtek-rtl88xxau-dkms.git
+
+#
 git clone https://github.com/aircrack-ng/rtl8812au.git
 cd rtl8812au/
 make && make install
