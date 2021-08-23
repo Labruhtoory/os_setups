@@ -7,7 +7,7 @@ mv configs/terminator /home/$uboi/.config/terminator/config
 chown $uboi /home/$uboi/.config/terminator/config
 
 
-apt install -fy build-essential libelf-dev linux-headers-`uname -r` bc dkms apt-transport-https terminator thunderbird libreoffice
+apt install -fy build-essential libelf-dev linux-headers-`uname -r` bc dkms apt-transport-https terminator thunderbird libreoffice libgconf-2-4 libappindicator1 libc++1
 
 cp -r pwnnotes/ /opt
 chmod 777 /opt/pwnnotes/setup.sh
@@ -45,6 +45,7 @@ sudo apt-get install sublime-text
 #Thunderbird & Libre
 #apt install -fy terminator thunderbird libreoffice
 
+apt --fix-broken install
 
 #Download
 x-www-browser https://www.realvnc.com/en/connect/download/viewer/
