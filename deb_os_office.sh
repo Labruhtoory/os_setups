@@ -50,6 +50,7 @@ apt --fix-broken install
 #Download
 x-www-browser https://www.realvnc.com/en/connect/download/viewer/
 x-www-browser https://discord.com/download
+x-www-browser https://obsidian.md/download
 
 chmod -R 777 /opt/
 
