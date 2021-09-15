@@ -260,6 +260,10 @@ else
   
   pip3 install bloodhound 
   
+  #standalone py exe
+  pip3 install pyinstaller
+  pip3 install pynput==1.6.8
+  
   snap install sublime-text --classic
   
   #goscan
