@@ -51,3 +51,7 @@ pacman -S --needed xfce4 mousepad parole ristretto thunar-archive-plugin thunar-
 
 # hide desktop icons
   xfconf-query -c xfce4-desktop -np '/desktop-icons/style' -t 'int' -s '0'
+
+# Apps
+
+pacman -S sudo terminator tmux discord spotifyd thunderbird libreoffice-fresh libreoffice-sdk audacity
