@@ -18,3 +18,5 @@ gc ()
 {
         git clone $1
 }
+
+alias dp='curl parrot.live'
