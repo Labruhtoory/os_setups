@@ -80,4 +80,4 @@ case $TERM in
 UC=$BLUE
 [ $UID -eq "0" ] && UC=$RED
 
-PS1="\[$GREEN\]\u@\[$BLUE\]\h\[$WHITE\]:\[$CYAN\]\w\[$NC\]\$ "
+PS1="\[$GREEN\]\u@\[$BLUE\]\h\[$WHITE\]:\[$CYAN\]\w\[$NC\]~$ "

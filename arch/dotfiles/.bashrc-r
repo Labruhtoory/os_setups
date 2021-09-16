@@ -10,6 +10,7 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 
+
 # History
 HISTFILE=~/.bash_history
 HISTSIZE=500
@@ -54,4 +55,4 @@ case $TERM in
 UC=$BLUE
 [ $UID -eq "0" ] && UC=$RED
 
-PS1="\[$RED\]\u@\[$BLUE\]\h\[$WHITE\]:\[$CYAN\]\w\[$NC\]\$ "
+PS1="\[$RED\]\u@\[$BLUE\]\h\[$WHITE\]:\[$CYAN\]\w\[$NC\]~# "
