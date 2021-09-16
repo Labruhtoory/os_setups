@@ -54,4 +54,4 @@ pacman -S --needed xfce4 mousepad parole ristretto thunar-archive-plugin thunar-
 
 # Apps
 
-pacman -S sudo terminator tmux discord spotifyd thunderbird libreoffice-fresh libreoffice-sdk audacity
+pacman -S sudo terminator tmux discord spotifyd thunderbird libreoffice-fresh libreoffice-sdk audacity go git docker python ruby rust 
