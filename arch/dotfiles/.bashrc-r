@@ -55,4 +55,9 @@ case $TERM in
 UC=$BLUE
 [ $UID -eq "0" ] && UC=$RED
 
-PS1="\[$RED\]\u@\[$BLUE\]\h\[$WHITE\]:\[$CYAN\]\w\[$NC\]~# "
+if [ $PWD = /$USER  ]
+then
+	PS1="\[$RED\]\u@\[$BLUE\]\h\[$WHITE\]:\[$CYAN\]\w\[$NC\]# "
+else
+	PS1="\[$RED\]\u@\[$BLUE\]\h\[$WHITE\]:\[$CYAN\]\w\[$NC\]~# "
+fi

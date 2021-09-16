@@ -80,4 +80,9 @@ case $TERM in
 UC=$BLUE
 [ $UID -eq "0" ] && UC=$RED
 
-PS1="\[$GREEN\]\u@\[$BLUE\]\h\[$WHITE\]:\[$CYAN\]\w\[$NC\]~$ "
+if [ $PWD = /home/$USER  ] 
+then
+	PS1="\[$GREEN\]\u@\[$BLUE\]\h\[$WHITE\]:\[$CYAN\]\w\[$NC\]$ "
+else
+	PS1="\[$GREEN\]\u@\[$BLUE\]\h\[$WHITE\]:\[$CYAN\]\w\[$NC\]~$ "
+fi
