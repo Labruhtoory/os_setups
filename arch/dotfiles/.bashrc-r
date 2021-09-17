@@ -57,7 +57,7 @@ UC=$BLUE
 
 if [ $PWD = /$USER  ]
 then
-	PS1="\[$RED\]\u@\[$BLUE\]\h\[$WHITE\]:\[$CYAN\]\w\[$NC\]# "
+	PS1="\[$RED\]\u\[$BLUE\]\[@\h\[$WHITE\]:\[$CYAN\]\w\[$NC\]# "
 else
-	PS1="\[$RED\]\u@\[$BLUE\]\h\[$WHITE\]:\[$CYAN\]\w\[$NC\]~# "
+	PS1="\[$RED\]\u\[$BLUE\]\[@\h\[$WHITE\]:\[$CYAN\]\w\[$NC\]~# "
 fi
