@@ -5,15 +5,16 @@ cfdisk /dev/sda
 
 
 #sda1 –> 1M – BIOS_boot
-#sda2 –> 4G – Linux swap
-#sda3 –> 16G – Linux filesystem
+
+#sda2 –> 16G – Linux filesystem
+#sda3 –> 4G – Linux swap
 #Write Changes & Quit
 
-mkfs.ext4 /dev/sda3
-mkswap /dev/sda2
+mkfs.ext4 /dev/sda2
+mkswap /dev/sda3
 swapon -a
 
-mount /dev/sda3 /mnt
+mount /dev/sda2 /mnt
 pacstrap /mnt base linux linux-firmware nano grub dhcpcd 
 genfstab /mnt >> /mnt/etc/fstab
 
